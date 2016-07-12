@@ -1,0 +1,16 @@
+{
+  "folders":
+  [
+    {
+      "follow_symlinks": true,
+      "path": "/home/mari/SavaMar/thinkMob/the_96_thugs",
+      "folder_exclude_patterns": ["tmp/*"]
+    }
+  ],
+  "settings":
+    {
+      "tab_size": 2,
+      "translate_tabs_to_spaces": true,
+    },
+  
+}

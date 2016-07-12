@@ -1,0 +1,15 @@
+p#notice = notice
+
+
+= image_tag @weapon.image.url(:medium)
+br
+br
+p
+  = @weapon.description
+p
+  strong Price:  
+  = @weapon.price.format(:with_currency => true)
+  
+= link_to 'Edit', edit_weapon_path(@weapon)
+span  | 
+= link_to 'Back', weapons_path

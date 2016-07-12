@@ -1,0 +1,25 @@
+h1 Listing weapons
+
+table
+  thead
+    tr
+      th Image
+      th Description
+      th Price
+      th
+      th
+      th
+
+  tbody
+    - @weapons.each do |weapon|
+      tr
+        td = weapon.image
+        td = weapon.description
+        td = weapon.price
+        td = link_to 'Show', weapon
+        td = link_to 'Edit', edit_weapon_path(weapon)
+        td = link_to 'Destroy', weapon, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Weapon', new_weapon_path

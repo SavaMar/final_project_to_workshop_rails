@@ -1,0 +1,15 @@
+.col-md-10.col-md-offset-1
+  h1.posts-h1 Amazing blog about your f*king life
+  br
+  - @posts.each do |post|
+    .col-sm-4.posts
+      = link_to post_path(post)
+        = image_tag "post.png", class: "posts-img"
+      h3.text-center
+        = link_to "#{post.title}", post_path(post), class: "text-danger"
+      .posts-hr
+        hr
+      .col-sm-12.posts-pdng
+        P.text-muted
+          = post.short_content
+        hr

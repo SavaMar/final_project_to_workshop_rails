@@ -1,0 +1,103 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  background-color: #EFF1F0;
+}
+
+
+// ==============
+// main style
+//===============
+
+.bgc-wht {
+  background-color: #fff;
+  padding: 0;
+}
+
+.m-top-15 {
+  margin-top: 15px;
+}
+
+.m-top-30 {
+  margin-top: 30px;
+}
+
+.m-btm-15 {
+  margin-bottom: 15px;
+}
+
+.m-btm-50 {
+  margin-bottom: 50px;
+}
+
+// ==============
+// POST
+//===============
+
+.posts {
+  // -webkit-box-shadow: 10px 6px 25px 0px rgba(0,0,0,0.15);
+  // -moz-box-shadow: 10px 6px 25px 0px rgba(0,0,0,0.15);
+  // box-shadow: 10px 6px 25px 0px rgba(0,0,0,0.15);
+  box-shadow: 0px 17px 36px -6px rgba(0,0,0,0.22);
+  &-img {
+    width: 100%;
+  }
+  &-hr {
+    hr {
+      display: block;
+      width: 30%;
+    }
+  }
+  &-pdng {
+    padding: 0 30px;
+  }
+}
+
+.post {
+  &-img {
+    background-image: image-url("post.png");
+    background-size: contain;
+    background-position: center;
+    height: 300px;
+    display: inline-block;
+  }
+  blockquote {
+    display: inline-block;
+  }
+  &-title {
+    font-weight: bold;
+    font-size: 40px;
+  }
+  &-user-name {
+    font-weight: bold;
+    font-size: 15px;
+  }
+}
+
+// ==============
+// Devise
+//===============
+
+.sign {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+  padding: 40px 0;
+}

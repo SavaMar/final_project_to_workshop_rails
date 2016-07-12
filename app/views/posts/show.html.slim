@@ -1,0 +1,26 @@
+.col-sm-12.bgc-wht  
+  .col-sm-12.post-img
+  .col-md-10.col-md-offset-1
+    p.small.text-muted.m-top-30
+        = time_ago_in_words(@post.created_at).gsub('about', ' ')
+        |  ago by 
+        = link_to "#{@post.user.full_name}",user_path(@post.user)
+    p.post-title.m-top-30
+      = @post.title
+    
+    p.m-left-10.post-content.m-top-30
+      =simple_format(@post.content)
+    hr
+    .col-sm-8.col-md-offset-2
+      .col-sm-2
+        = link_to user_path(@post.user) 
+          = image_tag @post.user.avatar.url(:thumb)
+      .col-sm-10.post-user
+        blockquote
+          p.post-user-name 
+            = @post.user.full_name
+          p.text-muted 
+            = @post.user.email
+    .col-sm-12
+      hr
+      h3.m-btm-50 Comments:

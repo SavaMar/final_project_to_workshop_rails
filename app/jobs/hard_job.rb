@@ -1,9 +1,9 @@
 class HardJob < ActiveJob::Base
   queue_as :default
 
-  def perform(weapon_id)
+  def perform(*args)
     puts "Started"
-    puts "Weapon ID #{weapon_id}"
+    puts "Weapon ID"
     puts "all is ok"
     sleep(10)
     puts "Finished"

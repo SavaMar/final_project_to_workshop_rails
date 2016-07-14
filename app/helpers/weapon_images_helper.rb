@@ -1,0 +1,2 @@
+module WeaponImagesHelper
+end

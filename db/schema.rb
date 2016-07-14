@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160713130110) do
+ActiveRecord::Schema.define(version: 20160714080658) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -84,6 +84,16 @@ ActiveRecord::Schema.define(version: 20160713130110) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
+  create_table "weapon_images", force: :cascade do |t|
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "weapon_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
   create_table "weapons", force: :cascade do |t|
     t.string   "image_file_name"
     t.string   "image_content_type"
@@ -95,6 +105,7 @@ ActiveRecord::Schema.define(version: 20160713130110) do
     t.datetime "updated_at",                         null: false
     t.integer  "price_kopiykas",     default: 0,     null: false
     t.string   "price_currency",     default: "UAH", null: false
+    t.string   "name"
   end
 
 end

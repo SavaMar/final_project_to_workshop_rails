@@ -11,6 +11,6 @@ User.create(first_name: 'Jho', last_name: 'Filippi', age: 13, gender: 1, country
 User.create(first_name: 'Mono', last_name: 'Karilo', age: 13, gender: 1, country: 'Ukrai', city: 'Lviv', password: '12345678', email: 'marilo2@example.com')
 
 (3..50).each do |i|
-  User.create!(email: "#{i}email@mail.com", password: "000000", password_confirmation: "000000", 
+  User.create!(email: "#{i}email@mail.com", password: "12345678", password_confirmation: "12345678", 
     first_name: "malini#{i}", last_name: "last#{i}", age:23, gender:1, city: "Kiev", country: 'Ukraine')
 end

@@ -1,0 +1,14 @@
+.col-md-6
+  - @users.each do |user|
+    p
+      = user.full_name
+
+  = paginate @users
+
+
+.col-md-6
+  - @users.each do |user|
+    p
+      = user.full_name
+
+  = paginate @us, param_name: :page_other

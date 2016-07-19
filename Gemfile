@@ -43,4 +43,5 @@ gem 'money-rails'
 gem "sidekiq"
 gem "sidekiq-cron", "~> 0.4.0"
 gem 'activeadmin', github: 'activeadmin'
+gem "paranoia", "~> 2.0"
 # gem "bower-rails", "~> 0.10.0",git: "https://github.com/rharriso/bower-rails.git"

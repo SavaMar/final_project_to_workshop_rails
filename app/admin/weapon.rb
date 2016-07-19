@@ -46,7 +46,7 @@ ActiveAdmin.register Weapon do
     end
     f.inputs "Images" do
       f.has_many :weapon_images, :allow_destroy => true, :heading => false, :new_record => true do |img_f|
-        img_f.input :image, :as => :file, :label => "Image",:hint => img_f.object.image.nil? ? img_f.template.content_tag(:span, "No Image Yet") : img_f.template.image_tag(img_f.object.image.url(:small))
+        img_f.input :image, :as => :file, :label => "Image",:hint => img_f.object.image.nil? ? img_f.template.content_tag(:span, "No Image Yet") : img_f.template.image_tag(img_f.object.image.url(:medium))
             img_f.input :_destroy, :as=>:boolean, :required => false, :label => 'Remove image'
       end
     end

@@ -22,6 +22,8 @@ ActiveAdmin.register User do
     end
   end
 
+
+
   # before_action only: :update do
   #   @user = User.friendly.find(params[:id])
   #   @user.update_attribute(slug: @user.full_name)

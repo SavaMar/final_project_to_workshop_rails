@@ -1,6 +1,6 @@
 h1 Users#show
 br
-= image_tag @user.avatar.url(:thumb)
+= image_tag @user.avatar.url(:thumb), class: "default-avatar"
 p 
   =@user.full_name
   br

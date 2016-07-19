@@ -39,6 +39,11 @@ class WeaponsController < ApplicationController
     end
   end
 
+    def get_user_versions
+    u = User.find(57)
+    render json: { user: u.versions }
+  end
+
   # PATCH/PUT /weapons/1
   # PATCH/PUT /weapons/1.json
   def update

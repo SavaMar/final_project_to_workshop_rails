@@ -21,10 +21,19 @@ body {
   background-color: #EFF1F0;
 }
 
-
 // ==============
 // main style
 //===============
+.default-avatar {
+  width: 200px;
+  height: 300px;
+  margin: 20px 0;
+}
+
+.underline {
+  text-decoration: none !important;
+  color: #fff !important;
+}
 
 .bgc-wht {
   background-color: #fff;

@@ -48,3 +48,4 @@ gem "paranoia", "~> 2.0"
 gem 'friendly_id'
 gem 'country-select'
 gem 'kaminari'
+gem 'paper_trail'

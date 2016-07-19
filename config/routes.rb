@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   resources :posts
   resources :users
+  get 'us_json', to: "weapons#get_user_versions"
 end

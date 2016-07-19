@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   as_enum :gender, female: 1, male: 0
   has_many :posts
+  has_paper_trail
+  acts_as_paranoid
 
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
@@ -18,7 +20,7 @@ class User < ActiveRecord::Base
     storage: :dropbox,
     dropbox_credentials: Rails.root.join("config/dropbox.yml"),
     styles: { medium: "300x300>", thumb: "100x100" }, 
-    default_url: "missing.png",
+    default_url: "missed.jpg",
     dropbox_options: {       
       path: proc { |style| "#{style}/#{id}_#{avatar.original_filename}"}
     }
@@ -31,6 +33,10 @@ class User < ActiveRecord::Base
 
   def full_name                                                                                                                                                                                     
     ([first_name, last_name] - ['']).compact.join(' ')
+  end
+
+  def user
+    User.unscoped {super }
   end
 
   def self.from_omniauth(access_token)
@@ -46,5 +52,7 @@ class User < ActiveRecord::Base
     # end
     user
   end
+
+  
 
 end

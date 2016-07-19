@@ -2,6 +2,15 @@ class User < ActiveRecord::Base
   as_enum :gender, female: 1, male: 0
   has_many :posts
 
+  extend FriendlyId
+  friendly_id :slug_candidates, use: :slugged
+
+  def slug_candidates
+    [
+      [:first_name, :last_name]
+    ]
+  end
+
   # has_attached_file :avatar, styles: { medium: "300x500#" }, default_url: "missing.png"
   do_not_validate_attachment_file_type :avatar
 

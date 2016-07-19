@@ -46,3 +46,5 @@ gem 'activeadmin', github: 'activeadmin'
 gem "paranoia", "~> 2.0"
 # gem "bower-rails", "~> 0.10.0",git: "https://github.com/rharriso/bower-rails.git"
 gem 'friendly_id'
+gem 'country-select'
+gem 'kaminari'

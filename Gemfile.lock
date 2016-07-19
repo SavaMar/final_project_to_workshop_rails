@@ -106,6 +106,7 @@ GEM
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.2)
     connection_pool (2.2.0)
+    country-select (1.1.1)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     debug_inspector (0.0.2)
@@ -370,12 +371,14 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
   capybara
   coffee-rails (~> 4.1.0)
+  country-select
   devise
   factory_girl_rails
   faker
   friendly_id
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   money-rails
   omniauth-google-oauth2 (~> 0.2.1)
   paperclip (~> 5.0.0.beta1)

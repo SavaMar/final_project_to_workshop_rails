@@ -13,41 +13,28 @@ ActiveAdmin.register Weapon do
 #   permitted
 # end
 
-  permit_params :name, :description, :price, weapon_images_attributes: [:id, :image]
-
-  index do
-    id_column
-    column :name
-    column :description
-
-    actions
-  end
+  permit_params :name, :image, :description, weapon_images_attributes: [:id, :image, :_destroy]
 
   show do
     attributes_table do
-      row :name
+      # row :name
       row :description
-      row :price do 
-        weapon.price.format
-      end
-
-      weapon.weapon_images.each do |img|
+      weapon.weapon_images.each do |wi|
         row :image do
-          image_tag img.image.url(:medium)
+          image_tag wi.image.url, width: 400
         end
       end
     end
   end
 
-  form :html => { :multipart => true } do |f|
+  form do |f|
     f.inputs do
-      f.input :name
+      # f.input :name
       f.input :description
-    end
-    f.inputs "Images" do
-      f.has_many :weapon_images, :allow_destroy => true, :heading => false, :new_record => true do |img_f|
-        img_f.input :image, :as => :file, :label => "Image",:hint => img_f.object.image.nil? ? img_f.template.content_tag(:span, "No Image Yet") : img_f.template.image_tag(img_f.object.image.url(:medium))
-            img_f.input :_destroy, :as=>:boolean, :required => false, :label => 'Remove image'
+      # f.input :image
+      f.has_many :weapon_images do |img|
+        img.input :image, hint: img.object.image.url
+        img.input :_destroy, as: :boolean
       end
     end
     f.actions

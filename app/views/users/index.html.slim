@@ -1,20 +1,22 @@
-.col-md-12
-  table.table.table-striped
-    thead
-      tr
-        th Name
-        th Email
-        th Actions
+.col.col-md-5.col-md-offset-4
+  table.table.table-info.games-table
     tbody
       - @users.each do |user|
-        tr
-          td
-            = link_to "#{user.full_name}", user_path(user)
-          td
-            = user.email
-          td.btn-group.underline
-            a.btn.btn-primary.underline(href="#") Show
-            a.btn.btn-primary.underline(href="#") Show
-            a.btn.btn-primary.underline(href="#") Show
+        - unless current_user == user
+          tr
+            |  <td id="new-messages-
+            = user.id
+            | ">
+            = availability(user)
+            |  <td id="new-messages-name-
+            = user.id
+            | ">
+            = user.full_name
+            td
+              = user.email
+            td.start-btn-table
+              = button_to "Play!", conversations_path(:recipient_id => user.id, :sender_id => current_user.id), class: "btn btn-success btn-xs start-conversation"
+
+                    
 
   = paginate @users

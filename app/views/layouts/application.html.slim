@@ -1,11 +1,14 @@
 doctype html
 html
   head
+
     title
       | The96Thugs
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
+    = stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css'
+    / meta content='<%= user_signed_in? ? current_user.id : "" %>' name='user-id'/>
   body
     // navbar
     nav.navbar.navbar-inverse

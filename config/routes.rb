@@ -14,4 +14,8 @@ Rails.application.routes.draw do
   resources :posts
   resources :users
   get 'us_json', to: "weapons#get_user_versions"
+  
+  resources :conversations do
+    resources :messages
+  end
 end

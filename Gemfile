@@ -41,8 +41,8 @@ gem 'simple_enum', '~> 2.0.0' , require: 'simple_enum/mongoid'
 gem "paperclip-dropbox", git: "https://github.com/janko-m/paperclip-dropbox.git"
 gem "omniauth-google-oauth2", "~> 0.2.1"
 gem 'money-rails'
-gem "sidekiq"
-gem "sidekiq-cron", "~> 0.4.0"
+# gem "sidekiq"
+# gem "sidekiq-cron", "~> 0.4.0"
 gem 'activeadmin', github: 'activeadmin'
 gem "paranoia", "~> 2.0"
 # gem "bower-rails", "~> 0.10.0",git: "https://github.com/rharriso/bower-rails.git"

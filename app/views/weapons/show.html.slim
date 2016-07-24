@@ -9,6 +9,8 @@ p
 p
   strong Price:  
   = @weapon.price.format(:with_currency => true)
+  span  | 
+  = currency(@weapon.price).format(:with_currency => true)
   
 = link_to 'Edit', edit_weapon_path(@weapon)
 span  | 

@@ -24,15 +24,18 @@ group :development, :test do
   gem 'vcr'
   gem 'faker'
   gem 'shoulda-matchers'
+  gem 'mechanize'
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
   # gem 'spring'
   gem 'better_errors'
-  # gem 'capistrano', '~> 3.1'
-  # gem 'capistrano-rails', '~> 1.1'
-  
+  gem 'capistrano', '~> 3.1'
+  gem 'capistrano-rails', '~> 1.1'
+  gem 'capistrano-rvm'
+  gem 'capistrano-bundler'
+  # gem 'capistrano-rbenv', '~> 2.0'
 end
 
 gem 'slim-rails'

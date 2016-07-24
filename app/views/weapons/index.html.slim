@@ -9,13 +9,16 @@ table
       th
       th
       th
+      th
 
   tbody
     - @weapons.each do |weapon|
       tr
-        td = weapon.image
+        td = link_to weapon
+          = image_tag(weapon.image(:thumb))
         td = weapon.description
-        td = weapon.price
+        td = weapon.price.format(:with_currency => true)
+        td = currency(weapon.price).format(:with_currency => true)
         td = link_to 'Show', weapon
         td = link_to 'Edit', edit_weapon_path(weapon)
         td = link_to 'Destroy', weapon, data: { confirm: 'Are you sure?' }, method: :delete

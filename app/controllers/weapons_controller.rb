@@ -1,3 +1,7 @@
+require 'mechanize'
+require 'date'
+require 'json'
+
 class WeaponsController < ApplicationController
   before_action :set_weapon, only: [:show, :edit, :update, :destroy]
 
@@ -10,12 +14,13 @@ class WeaponsController < ApplicationController
   # GET /weapons/1
   # GET /weapons/1.json
   def show
+    # @usd = currency(@weapon.price)
   end
 
   # GET /weapons/new
   def new
     @weapon = Weapon.new
-    HardJob.perform_later(12)
+    # HardJob.perform_later(12)
   end
 
   # GET /weapons/1/edit
